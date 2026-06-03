@@ -25,7 +25,6 @@ struct SharedState {
     waker: Option<Waker>,
 }
 
-//TimerFuture 承诺满足 Future 的契约
 impl Future for TimerFuture {
     type Output = ();
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
@@ -55,7 +54,6 @@ impl Future for TimerFuture {
     }
 }
 
-// / 为类型实现自己的方法
 impl TimerFuture {
     /// Create a new `TimerFuture` which will complete after the provided
     /// timeout.
@@ -131,7 +129,7 @@ fn main() {
     //    宏把 async fn main 的函数体提取出来，
     //    包进 block_on(async { }) 里交给执行器驱动
     runtime.block_on(async {
-        tokio::join!(
+        join!(
             async {
                 TimerFuture::new(Duration::from_secs(2)).await;
                 println!("计时器A:2秒到了");
