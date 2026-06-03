@@ -1,0 +1,26 @@
+# 强制核心代码使用 LF
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Windows 特定文件保持 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制文件明确标记
+*.png binary
+*.jpg binary
+*.zip binary
+*.pdf binary
+*.exe binary
+
+# 其他文本文件智能处理
+* text=auto
