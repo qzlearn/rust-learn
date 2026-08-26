@@ -1,6 +1,6 @@
 use core::fmt::NumBuffer;
 
-//学习rust 1.98新特性
+//学习rust 1.98新特性 零堆分配的整数格式化，配合栈上缓冲一次写入
 fn main() {
     // 创建一个足够容纳usize所有可能值的缓冲区
     let mut buf = NumBuffer::<usize>::new();
